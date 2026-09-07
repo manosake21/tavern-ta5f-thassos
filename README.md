@@ -1,2 +1,18 @@
-# tavern-ta5f-thassos
-Website project for Tavern Ta5F, Potos Thassos
+# Ταβέρνα Ta5F
+
+## Στ. Επ.
+- Διεύθυνση: Ποτός, Θάσος, Ελλάδα
+- Τηλέφωνο: 25930 53221
+- Email: ta5f@yahoo.gr
+
+## Γιατί χρειάζεται το site
+Τουριστικός προορισμός με επισκέπτες που ψάχνουν online πού θα φάνε. Ένα γρήγορο δίγλωσσο site θα κάνει την επιχείρηση πιο εύκολα ανακαλύψιμη.
+
+## Website quality
+No standalone website found in current listing
+
+## Lead score
+90/100
+
+## Τιμή site
+€250 (εφάπαξ)
