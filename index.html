@@ -1,203 +1,283 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ταβέρνα Ta5F | Ποτός, Θάσος, Ελλάδα</title>
-    <meta name="description" content="Τουριστικός προορισμός με επισκέπτες που ψάχνουν online πού θα φάνε. Ένα γρήγορο δίγλωσσο site θα κάνει την επιχείρηση πιο εύκολα ανακαλύψιμη.">
-    <style>
-        :root{
-            --primary:#1d1b18;
-            --bg:#f6f2ea;
-            --accent:#e9dfcf;
-            --light:#fffdf9;
-        }
-        *,*::before,*::after{box-sizing:border-box}
-        body{
-            margin:0;
-            font-family:Inter,system-ui,-apple-system,sans-serif;
-            background:var(--bg);
-            color:var(--primary);
-            line-height:1.6;
-        }
-        .wrap{max-width:1120px;margin:auto;padding:0 7%}
-        nav{
-            position:sticky;top:0;z-index:5;
-            display:flex;justify-content:space-between;align-items:center;
-            padding:16px 7%;background:var(--light);backdrop-filter:blur(10px);
-            border-bottom:1px solid #e7dfd2;
-        }
-        button{
-            border:1px solid var(--primary);
-            background:transparent;
-            border-radius:999px;
-            padding:8px 14px;
-            font-weight:700;
-            cursor:pointer;
-        }
-        .hero{
-            min-height:78vh;
-            display:grid;
-            align-items:center;
-            background:linear-gradient(135deg,var(--accent),#fbfaf6);
-            padding:90px 0;
-        }
-        .eyebrow{
-            font-size:.78rem;
-            font-weight:800;
-            letter-spacing:.16em;
-            text-transform:uppercase;
-        }
-        h1{
-            font-size:clamp(3.2rem,8vw,7rem);
-            line-height:.94;
-            letter-spacing:-.055em;
-            max-width:1000px;
-            margin:18px 0 25px;
-        }
-        .lead{font-size:1.18rem;max-width:720px}
-        .cta{
-            display:inline-block;
-            margin-top:22px;
-            padding:13px 20px;
-            border-radius:999px;
-            background:var(--primary);
-            color:#fff;
-            text-decoration:none;
-        }
-        section{padding:90px 0}
-        h2{
-            font-size:clamp(2.2rem,5vw,4rem);
-            line-height:1.05;
-            letter-spacing:-.04em;
-        }
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:18px;
-            margin-top:35px;
-        }
-        .card{
-            background:#fff;
-            border:1px solid #e6ded2;
-            border-radius:24px;
-            padding:26px;
-        }
-        .contact{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:18px;
-            margin-top:30px;
-        }
-        footer{
-            padding:40px 0;
-            background:var(--primary);
-            color:#fff;
-            text-align:center;
-        }
-        .en{display:none}
-        .lang-en .el{display:none}
-        .lang-en .en{display:block}
-        a{color:inherit}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ταβέρνα Ta5F | Ποτός, Θάσος, Ελλάδα</title>
+<meta name="description" content="Ταβέρνα Ta5F – αυθεντική ελληνική φιλοξενία στην Ποτό, Θάσος. Διπλή γλώσσα, εύκολη πρόσβαση και σαφείς πληροφορίες.">
+<style>
+/* ==== Core variables ==== */
+:root{
+  --color-primary:#2b1e15;
+  --color-bg:#faf5ed;
+  --color-accent:#c9a66b;
+  --color-light:#fff;
+  --font-sans:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif:"Times New Roman", serif;
+  --radius:12px;
+  --gap:1.5rem;
+}
+
+/* ==== Reset & base ==== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:100%;scroll-behavior:smooth;}
+body{
+  font-family:var(--font-sans);
+  background:var(--color-bg);
+  color:var(--color-primary);
+  line-height:1.6;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+img,svg{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+button{
+  font:inherit;
+  cursor:pointer;
+  border:none;
+  background:none;
+}
+
+/* ==== Accessibility ==== */
+:focus-visible{
+  outline:2px solid var(--color-accent);
+  outline-offset:2px;
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{transition:none!important;}
+}
+
+/* ==== Layout ==== */
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e3d9c9;
+}
+nav{
+  max-width:1120px;
+  margin:auto;
+  padding:var(--gap);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav h1{
+  font-family:var(--font-serif);
+  font-size:1.25rem;
+  font-weight:600;
+}
+
+/* ==== Language toggle ==== */
+.lang-toggle{
+  padding:.5rem 1rem;
+  border:2px solid var(--color-primary);
+  border-radius:999px;
+  background:var(--color-light);
+  font-weight:600;
+}
+.lang-en .lang-el{display:none;}
+.lang-en .lang-en{display:inline;}
+.lang-el .lang-en{display:none;}
+.lang-el .lang-el{display:inline;}
+
+/* ==== Hero ==== */
+.hero{
+  background:linear-gradient(135deg,var(--color-accent),#fdf9f2);
+  padding:4rem var(--gap);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 120%22><path fill=%22%23c9a66b%22 d=%22M0 60 C30 90 90 30 120 60 L120 120 L0 120 Z%22/></svg>') repeat;
+  opacity:.07;
+}
+.hero .eyebrow{
+  font-size:.85rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:.5rem;
+}
+.hero h1{
+  font-family:var(--font-serif);
+  font-size:clamp(2.5rem,10vw,5rem);
+  line-height:1.1;
+  margin:1rem 0;
+}
+.hero p{
+  max-width:45ch;
+  margin:auto;
+}
+.hero .cta{
+  display:inline-block;
+  margin-top:1.5rem;
+  padding:.75rem 1.5rem;
+  background:var(--color-primary);
+  color:#fff;
+  border-radius:999px;
+  font-weight:600;
+  transition:background .3s;
+}
+.hero .cta:hover,
+.hero .cta:focus-visible{
+  background:#1a150e;
+}
+
+/* ==== Sections ==== */
+section{
+  max-width:1120px;
+  margin:auto;
+  padding:3rem var(--gap);
+}
+section + section{border-top:1px solid #e3d9c9;}
+section h2{
+  font-family:var(--font-serif);
+  font-size:clamp(2rem,6vw,3.5rem);
+  margin-bottom:1rem;
+}
+section .eyebrow{
+  font-size:.9rem;
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--color-accent);
+  margin-bottom:.5rem;
+}
+
+/* ==== Grid cards ==== */
+.grid{
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  margin-top:2rem;
+}
+.card{
+  background:var(--color-light);
+  border:1px solid #e3d9c9;
+  border-radius:var(--radius);
+  padding:1.5rem;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+.card h3{
+  font-family:var(--font-serif);
+  font-size:1.25rem;
+  margin-bottom:.25rem;
+}
+.card a.cta{
+  align-self:start;
+  margin-top:auto;
+  padding:.5rem 1rem;
+  background:var(--color-primary);
+  color:#fff;
+  border-radius:999px;
+  font-size:.9rem;
+  transition:background .3s;
+}
+.card a.cta:hover,
+.card a.cta:focus-visible{
+  background:#1a150e;
+}
+
+/* ==== Contact ==== */
+.contact{
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+}
+.contact div{
+  background:var(--color-light);
+  border:1px solid #e3d9c9;
+  border-radius:var(--radius);
+  padding:1rem;
+}
+.contact strong{
+  display:block;
+  font-weight:600;
+  margin-bottom:.5rem;
+}
+
+/* ==== Footer ==== */
+footer{
+  background:var(--color-primary);
+  color:#fff;
+  text-align:center;
+  padding:2rem var(--gap);
+  margin-top:auto;
+}
+
+/* ==== Responsive tweaks ==== */
+@media(min-width:768px){
+  .hero{padding:6rem var(--gap);}
+}
+</style>
 </head>
-<body>
-    <nav>
-        <strong>Ταβέρνα Ta5F</strong>
-        <button id="lang">EN</button>
-    </nav>
+<body class="lang-el">
+<header>
+  <nav>
+    <h1>Ταβέρνα Ta5F</h1>
+    <button id="langToggle" class="lang-toggle" aria-pressed="false">EN</button>
+  </nav>
+</header>
 
-    <section class="hero">
-        <div class="wrap">
-            <div class="eyebrow el">Ελληνική φιλοξενία · Ποτός, Θάσος, Ελλάδα</div>
-            <div class="eyebrow en">Greek hospitality · Potos, Thasos, Greece</div>
-            <h1 class="el">Γεύση που αξίζει να τη γνωρίσεις.</h1>
-            <h1 class="en">Tavern Ta5F</h1>
-            <p class="lead">Τουριστικός προορισμός με επισκέπτες που ψάχνουν online πού θα φάνε. Ένα γρήγορο δίγλωσσο site θα κάνει την επιχείρηση πιο εύκολα ανακαλύψιμη.</p>
-            <a class="cta" href="#contact">Contact</a>
-        </div>
-    </section>
+<main>
+  <section class="hero">
+    <div class="eyebrow lang-el">Ελληνική φιλοξενία · Ποτός, Θάσος</div>
+    <div class="eyebrow lang-en">Greek hospitality · Potos, Thasos</div>
+    <h1 class="lang-el">Γεύση που αξίζει να τη γνωρίσεις.</h1>
+    <h1 class="lang-en">Taste Worth Discovering.</h1>
+    <p class="lang-el">Αυθεντική ταβέρνα στην καρδιά της Θάσου, έτοιμη να σας καλωσορίσει.</p>
+    <p class="lang-en">Authentic tavern in the heart of Thasos, ready to welcome you.</p>
+    <a href="#contact" class="cta lang-el">Επικοινωνία</a>
+    <a href="#contact" class="cta lang-en">Contact</a>
+  </section>
 
-    <section>
-        <div class="wrap">
-            <div class="eyebrow el">Η εμπειρία</div>
-            <div class="eyebrow en">The experience</div>
-            <h2 class="el">Αυθεντική ταυτότητα. Σύγχρονη online παρουσία.</h2>
-            <h2 class="en">Authentic identity. A modern online presence.</h2>
-            <div class="grid">
-                <article class="card">
-                    <h3>Τοποθεσία</h3>
-                    <p>Εύκολη πρόσβαση και καθαρές πληροφορίες για τον επισκέπτη.</p>
-                </article>
-                <article class="card">
-                    <h3>Κουζίνα & εμπειρία</h3>
-                    <p>Παρουσίαση της ταυτότητας, των πιάτων και της ατμόσφαιρας.</p>
-                </article>
-                <article class="card">
-                    <h3>Για Έλληνες & ταξιδιώτες</h3>
-                    <p>Δίγλωσση εμπειρία για καλύτερη ανακάλυψη από κινητό.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+  <section id="experience">
+    <div class="eyebrow lang-el">Η εμπειρία</div>
+    <div class="eyebrow lang-en">The Experience</div>
+    <h2 class="lang-el">Αυθεντική ταυτότητα, σύγχρονη παρουσία.</h2>
+    <h2 class="lang-en">Authentic identity, modern presence.</h2>
+    <div class="grid">
+      <article class="card">
+        <h3 class="lang-el">Τοποθεσία</h3>
+        <h3 class="lang-en">Location</h3>
+        <p class="lang-el">Στην Ποτό, με εύκολη πρόσβαση από το κέντρο.</p>
+        <p class="lang-en">In Potos, easy access from the town centre.</p>
+      </article>
+      <article class="card">
+        <h3 class="lang-el">Κουζίνα & ατμόσφαιρα</h3>
+        <h3 class="lang-en">Cuisine & ambience</h3>
+        <p class="lang-el">Παραδοσιακά πιάτα με σύγχρονη πινελιά.</p>
+        <p class="lang-en">Traditional dishes with a modern touch.</p>
+      </article>
+      <article class="card">
+        <h3 class="lang-el">Διπλή γλώσσα</h3>
+        <h3 class="lang-en">Bilingual</h3>
+        <p class="lang-el">Πληροφορίες στα ελληνικά και αγγλικά.</p>
+        <p class="lang-en">Information in Greek and English.</p>
+      </article>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div class="wrap">
-            <div class="eyebrow el">Επικοινωνία</div>
-            <div class="eyebrow en">Contact</div>
-            <h2 class="el">Θα χαρούμε να σας καλωσορίσουμε.</h2>
-            <h2 class="en">We look forward to welcoming you.</h2>
-            <div class="contact">
-                <div>
-                    <strong>Address</strong>
-                    <p>Ποτός, Θάσος, Ελλάδα</p>
-                </div>
-                <div>
-                    <strong>Phone</strong>
-                    <p><a href="tel:2593053221">25930 53221</a></p>
-                </div>
-                <div>
-                    <strong>Email</strong>
-                    <p><a href="mailto:ta5f@yahoo.gr">ta5f@yahoo.gr</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="visit">
-        <div class="wrap">
-            <div class="eyebrow el">Για την επόμενη έξοδό σου</div>
-            <div class="eyebrow en">For your next outing</div>
-            <h2 class="el">Έχεις λόγο να περάσεις από εδώ.</h2>
-            <h2 class="en">A good reason to make the stop.</h2>
-            <p class="lead el">Μια καλή έξοδος ξεκινά με εύκολη πρόσβαση και ξεκάθαρες πληροφορίες. Δες το σημείο και έλα να μας γνωρίσεις.</p>
-            <p class="lead en">A good outing starts with an easy route and clear information. Find the location and come experience it.</p>
-            <div class="grid">
-                <article class="card">
-                    <h3 class="el">Βρες τη διαδρομή</h3>
-                    <h3 class="en">Find the way</h3>
-                    <p class="el">Άνοιξε το Google Maps και δες πώς θα έρθεις.</p>
-                    <p class="en">Open Google Maps and get directions.</p>
-                    <a class="cta" href="https://www.google.com/maps/search/?api=1&query=Tavern+Ta5F+Potos+Thassos+Greece" target="_blank" rel="noopener">Google Maps</a>
-                </article>
-                <article class="card">
-                    <h3 class="el">Θες περισσότερα;</h3>
-                    <h3 class="en">Want to know more?</h3>
-                    <p class="el">Επικοινώνησε απευθείας με την επιχείρηση.</p>
-                    <p class="en">Contact the business directly.</p>
-                    <a class="cta" href="tel:2593053221">25930 53221</a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="wrap">Ταβέρνα Ta5F · Ποτός, Θάσος, Ελλάδα</div>
-    </footer>
-
-    <script>
-        const body=document.body, btn=document.getElementById('lang');
-        btn.onclick=()=>{body.classList.toggle('lang-en');btn.textContent=body.classList.contains('lang-en')?'GR':'EN'};
-    </script>
-</body>
-</html>
+  <section id="visit">
+    <div class="eyebrow lang-el">Για την επόμενη έξοδό σου</div>
+    <div class="eyebrow lang-en">For your next outing</div>
+    <h2 class="lang-el">Έχεις λόγο να περάσεις από εδώ.</h2>
+    <h2 class="lang-en">A good reason to stop by.</h2>
+    <div class="grid">
+      <article class="card">
+        <h3 class="lang-el">Βρες τη διαδρομή</h3>
+        <h3 class="lang-en">Find the way</h3>
+        <p class="lang-el">Άνοιξε το Google Maps για οδηγίες.</p>
+        <p class="lang-en">Open Google Maps for directions.</p>
+        <a class="cta" href="https://www.google.com/maps/search/?api=1&query=Tavern+Ta5F+Potos+Thassos+Greece" target="_blank" rel="noopener" class="lang-el">Google Maps</a>
+        <a class="cta" href="https://www.google.com/maps/search/?api=1&query=Tavern+Ta5F+Potos+Thassos+Greece" target="_blank" rel="noopener" class="lang-en">Google Maps</a><footer style="padding:2rem 6vw;border-top:1px solid #ddd;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font:600 .75rem system-ui;letter-spacing:.08em;text-transform:uppercase"><span>Tavern Ta5F Thassos</span><span>© 2026</span></footer></body></html>
